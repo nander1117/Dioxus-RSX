@@ -6,14 +6,24 @@
   "engines": {
     "vscode": "^1.102.0"
   },
+  "publisher": "nander1117",
+  "icon": "assets/icons/icon.ico",
   "categories": [
     "Programming Languages"
   ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/nander1117/Dioxus-RSX"
+  },
+  "bugs": {
+        "url": "https://github.com/nander1117/Dioxus-RSX/issues"
+  },
+  "homepage": "https://github.com/nander1117/Dioxus-RSX/README.md",
   "contributes": {
 
     "grammars": [{
-      "injectTo": ["source.rust", "rust","source.dioxus.rsx", "source.rsx", "source.dioxus.rs", "source.rs"],
-       "patterns": [
+      "injectTo": ["source.rust"],
+      "patterns": [
         {
           "begin": "rsx!\\s*\\{",
           "end": "\\}",

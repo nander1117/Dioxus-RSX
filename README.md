@@ -1,65 +1,51 @@
-# dioxus-rsx README
+<p align="center">
+    <img src="https://github.com/nander1117/Dioxus-RSX/assets/images/icon.png" width="80" />
+    <h2 align="center" style="letter-spacing:2px;font-weight:700">Dioxus-RSX (Rust)</h2>
+</p>
 
-This is the README for your extension "dioxus-rsx". After writing up a brief description, we recommend including the following sections.
+<p align="center">Highlight Dioxus RSX files in VS Code</p>
 
-## Features
+> This is with much love for the Dioxus community.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+![Dioxus-RSX Example](/assets/images/example.png)
 
-For example if there is an image subfolder under your extension project workspace:
+* 🌙 Super dark editor color scheme
+* 🍭 Vibrant colors for better readability
+* 💻 Italicized keywords compliments "Operator Mono" or similar fonts (optional)
 
-\!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
+## Change Colors
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+If you want to change the colors, you can do so by adding the following to your `settings.json` file:
 
-## Extension Settings
+```json
+"editor.tokenColorCustomizations": {
+  "textMateRules": [
+    {
+        "name": "tags html",
+        "scope": "entity.name.tag.rsx",
+        "settings": {
+            "foreground": "#custonColor"
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+        }
+    },
+    {
+        "name": "attributes html",
+        "scope": "entity.other.attribute-name.rsx",
+        "settings": {
+        "foreground": "#custonColor"
+        }
+    }
+}
+  ]
+}
+```
 
-For example:
+## Extras
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+if you want to collaborate or you find a bug, don't hesitate to let me know [Contact Me/Jhon AF](https://github.com/nander1117/Dioxus-RSX)
 
 ---
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Don't forget to leave a review on the marketplace! **Enjoy!**

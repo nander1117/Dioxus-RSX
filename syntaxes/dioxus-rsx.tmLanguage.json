@@ -45,7 +45,7 @@
         ]
     },
     "tag-block": {
-      "begin": "(\\b[a-z_][a-zA-Z0-9_]*)\\s*({)",
+      "begin": "(?<!\\bwhile\\s|\\bfor\\s|\\bif\\s|\\bmatch\\s|\\b\\.)\\b(\\b[a-z_][a-zA-Z0-9_]*)\\s*({)",
       "beginCaptures": {
         "1": { "name": "entity.name.tag.rsx" },
         "2": { "name": "punctuation.brackets.begin.rsx" }
@@ -63,7 +63,7 @@
       ]
     },
     "tag-upercase": {
-      "begin": "(\\b[A-Z][a-zA-Z0-9_]*)\\s*({)",
+      "begin": "(?<!\\bwhile\\s|\\bfor\\s|\\bif\\s|\\bmatch\\s|\\b\\.)\\b(\\b[A-Z][a-zA-Z0-9_]*)\\s*({)",
       "beginCaptures": {
           "1": { "name": "entity.name.type.rsx" }
       },
