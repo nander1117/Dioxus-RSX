@@ -10,12 +10,7 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "rust",
-      "aliases": ["rsx", "rust"],
-      "extensions": [".rsx"],
-      "configuration": "./language-configuration.json"
-    }],
+
     "grammars": [{
       "injectTo": ["source.rust", "rust","source.dioxus.rsx", "source.rsx", "source.dioxus.rs", "source.rs"],
        "patterns": [
@@ -26,7 +21,7 @@
         }
       ],
       "scopeName": "source.dioxus.rsx",
-      "path": "./syntaxes/rust.tmLanguage.json"
+      "path": "./syntaxes/dioxus-rsx.tmLanguage.json"
     }]
   }
 }
