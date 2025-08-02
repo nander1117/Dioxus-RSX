@@ -1,0 +1,141 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Dioxus RSX",
+  "scopeName": "source.dioxus.rsx",
+  "fileTypes": ["rsx"],
+  "injectionSelector": "L:source.rust",
+  "patterns": [
+    {
+      "comment": "Inyectamos la gramática de RSX dentro de la macro rsx!",
+      "begin": "(rsx!)\\s*\\{",
+      "end": "\\}",
+      "captures": {
+        "1": { "name": "entity.name.function.macro.rsx" },
+        "2": { "name": "punctuation.definition.macro.begin.rsx" }
+      },
+      "name": "meta.embedded.dioxus.rsx",
+      "patterns": [
+        { "include": "#tag-block" }
+      ]
+    }
+  ],
+  "repository": {
+    "tag-block": {
+      "begin": "(\\b[a-zA-Z_][a-zA-Z0-9_]*)\\s*({)",
+      "beginCaptures": {
+        "1": { "name": "entity.name.tag.rsx" },
+        "2": { "name": "punctuation.section.block.begin.rsx" }
+      },
+      "end": "(})",
+      "endCaptures": {
+        "1": { "name": "punctuation.section.block.end.rsx" }
+      },
+      "patterns": [
+        { "include": "#comment" },
+        { "include": "#attribute" },
+        { "include": "#string-literal" },
+        { "include": "#constant" },
+        { "include": "#separator" },
+        { "include": "#tag-block" },
+		{ "include": "#function-call" },
+		{ "include": "#variable-declaration" },
+		{ "include": "#closure-declaration" },
+		{ "include": "#class" },
+		{ "include": "#true" },
+		{ "include": "#false" },
+		{ "include": "#mut" },
+		{ "include": "#ref" },
+		{ "include": "#*" }
+      ]
+    },
+    "attribute": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:)",
+      "captures": {
+        "1": { "name": "entity.other.attribute-name.rsx" },
+        "2": { "name": "punctuation.separator.key-value.rsx" }
+      }
+    },
+    "string-literal": {
+      "name": "string.quoted.double.rsx",
+      "begin": "\"",
+      "end": "\""
+    },
+    "constant": {
+      "match": "\\b([A-Z][A-Z0-9_]*)\\b",
+      "name": "constant.other.caps.rust"
+    },
+    "separator": {
+      "match": ",",
+      "name": "punctuation.separator.comma.rsx"
+    },
+    "comment": {
+        "match": "(//)(.*)$",
+		"captures": {
+			"1": { "name": "punctuation.definition.comment.rsx" },
+			"2": { "name": "comment.line.rsx" }
+		}
+
+    },
+	"function-call": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+      "captures": {
+        "1": { "name": "entity.name.function.rsx" },
+        "2": { "name": "punctuation.section.block.begin.rsx" }
+      }
+    },
+	"variable-declaration": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:)",
+      "captures": {
+        "1": { "name": "entity.name.function.rsx" },
+        "2": { "name": "punctuation.section.block.begin.rsx" }
+      }
+    },
+	"closure-declaration": {
+      "begin": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\|)",
+      "captures": {
+        "1": { "name": "entity.name.tag.rsx" },
+        "2": { "name": "entity.name.tag.rsx" }
+      },
+	  "end": "(\\|)",
+      "endCaptures": {
+        "1": { "name": "entity.name.tag.rsx" }
+      }
+	},
+	"class": {
+		"match": "\\b([A-Z_][a-zA-Z0-9_]*)\\b",
+		"captures": {
+			"1": { "name": "entity.name.type.rsx" }
+		}
+	},
+	"true": {
+		"match": "\\b(true)\\b",
+		"captures": {
+			"1": { "name": "constant.language.boolean.true.rsx" }
+		}
+	},
+	"false": {
+		"match": "\\b(false)\\b",
+		"captures": {
+			"1": { "name": "constant.language.boolean.false.rsx" }
+		}
+   	},
+	"mut":{
+		"match": "\\b(mut)\\b",
+		"captures": {
+			"1": { "name": "storage.modifier.mut.rsx" }
+		}
+	},
+	"ref":{
+		"match": "\\b(&)\\b",
+		"captures": {
+			"1": { "name": "keyword.operator.borrow.and.rust" }
+		}
+	},
+	"*":{
+		"match": "\\b(\\*)\\b",
+		"captures": {
+			"1": { "name": "keyword.operator.borrow.and.rust" }
+		}
+	}
+}
+}

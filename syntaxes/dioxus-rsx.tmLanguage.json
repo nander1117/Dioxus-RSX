@@ -1,0 +1,87 @@
+{
+  "scopeName": "source.dioxus.rs",
+  "fileTypes": [
+    "rs"
+  ],
+  "name": "Dioxus RSX",
+  "patterns": [
+    {
+      "include": "#main"
+    }
+  ],
+  "repository": {
+    "main": {
+      "patterns": [
+        {
+          "include": "#tag-block"
+        }
+      ]
+    },
+    "tag-block": {
+      "begin": "(\\b[a-zA-Z_][a-zA-Z0-9_]*)\\s*({)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.rsx"
+        },
+        "2": {
+          "name": "punctuation.section.block.begin.rsx"
+        }
+      },
+      "end": "(})",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.section.block.end.rsx"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#attribute"
+        },
+        {
+          "include": "#string-literal"
+        },
+        {
+          "include": "#constant"
+        },
+        {
+          "include": "#separator"
+        },
+        {
+          "include": "#tag-block"
+        }
+      ]
+    },
+    "attribute": {
+      "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(:)",
+      "captures": {
+        "1": {
+          "name": "entity.other.attribute-name.rsx"
+        },
+        "2": {
+          "name": "punctuation.separator.key-value.rsx"
+        }
+      }
+    },
+    "string-literal": {
+      "name": "string.quoted.double.rsx",
+      "begin": "\"",
+      "end": "\""
+    },
+    "constant": {
+      "match": "\\b([A-Z][A-Z0-9_]*)\\b",
+      "name": "variable.other.constant.rsx"
+    },
+    "separator": {
+      "match": ",",
+      "name": "punctuation.separator.comma.rsx"
+    },
+    "comment": {
+      "match": "//.*",
+      "name": "comment.line.double-slash.rsx"
+    }
+  }
+
+}
