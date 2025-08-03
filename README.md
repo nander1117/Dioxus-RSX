@@ -13,6 +13,7 @@
 ## Change Colors
 
 If you want to change the colors, you can do so by adding the following to your `settings.json` file:
+> replace `#customColor` with the color you want to use, for example `#ff0000` for red.
 
 ```json
 "editor.tokenColorCustomizations": {
@@ -21,7 +22,7 @@ If you want to change the colors, you can do so by adding the following to your 
         "name": "tags html",
         "scope": "entity.name.tag.rsx",
         "settings": {
-            "foreground": "#custonColor"
+            "foreground": "#customColor"
 
         }
     },
@@ -29,10 +30,9 @@ If you want to change the colors, you can do so by adding the following to your 
         "name": "attributes html",
         "scope": "entity.other.attribute-name.rsx",
         "settings": {
-        "foreground": "#custonColor"
+        "foreground": "#customColor"
         }
     }
-}
   ]
 }
 ```
