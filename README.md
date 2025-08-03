@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/nander1117/Dioxus-RSX/assets/images/icon.png" width="80" />
+    <img src="https://raw.githubusercontent.com/nander1117/Dioxus-RSX/refs/heads/main/assets/images/icon.jpg" width="80" />
     <h2 align="center" style="letter-spacing:2px;font-weight:700">Dioxus-RSX (Rust)</h2>
 </p>
 
@@ -8,11 +8,6 @@
 > This is with much love for the Dioxus community.
 
 ![Dioxus-RSX Example](/assets/images/example.png)
-
-* 🌙 Super dark editor color scheme
-* 🍭 Vibrant colors for better readability
-* 💻 Italicized keywords compliments "Operator Mono" or similar fonts (optional)
-
 
 
 ## Change Colors
