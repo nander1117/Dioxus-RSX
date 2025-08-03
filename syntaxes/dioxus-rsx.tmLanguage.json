@@ -77,7 +77,7 @@
       ]
     },
     "attribute": {
-      "match": "(?<!\\blet\\s|\\bconst\\s|\\bmut\\s)\\b([a-z_][a-zA-Z0-9_]*)\\s*(?<!:)(:)(?!:)",
+      "match": "(?<!\\blet\\s|\\bconst\\s|\\bmut\\s)\\b([a-z_][a-zA-Z0-9_#]*)\\s*(?<!:)(:)(?!:)",
       "captures": {
         "1": { "name": "entity.other.attribute-name.rsx" },
         "2": { "name": "keyword.operator.key-value.rust" }
