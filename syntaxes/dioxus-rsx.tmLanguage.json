@@ -47,7 +47,7 @@
     "tag-block": {
       "begin": "(?<!\\bwhile\\s|\\bfor\\s|\\bif\\s|\\bmatch\\s|\\b\\.)\\b(\\b[a-z_][a-zA-Z0-9_]*)\\s*({)",
       "beginCaptures": {
-        "1": { "name": "entity.name.tag.rsx" },
+        "1": { "name": "meta.tag.rsx entity.name.tag.html.rsx storage.type.rust.rsx keyword.other.rust.rsx " },
         "2": { "name": "punctuation.brackets.begin.rsx" }
       },
       "end": "(})",
@@ -65,7 +65,7 @@
     "tag-upercase": {
       "begin": "(?<!\\bwhile\\s|\\bfor\\s|\\bif\\s|\\bmatch\\s|\\b\\.)\\b(\\b[A-Z][a-zA-Z0-9_]*)\\s*({)",
       "beginCaptures": {
-          "1": { "name": "entity.name.type.rsx" }
+          "1": { "name": "meta.tag.rsx entity.name.tag.html.rsx storage.type.rust.rsx keyword.other.rust.rsx entity.name.type.rsx" }
       },
       "end": "(})",
       "patterns":[
@@ -79,7 +79,7 @@
     "attribute": {
       "match": "(?<!\\blet\\s|\\bconst\\s|\\bmut\\s)\\b([a-z_][a-zA-Z0-9_#]*)\\s*(?<!:)(:)(?!:)",
       "captures": {
-        "1": { "name": "entity.other.attribute-name.rsx" },
+        "1": { "name": "entity.other.attribute-name.rsx entity.name.function.rsx " },
         "2": { "name": "keyword.operator.key-value.rust" }
       }
     }
