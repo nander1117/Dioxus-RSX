@@ -17,33 +17,50 @@ The used theme is [Monokai Vibrant Rust](https://marketplace.visualstudio.com/it
 ## Change Colors
 
 If you want to change the colors, you can do so by adding the following to your `settings.json` file:
-> replace `#customColor` with the color you want to use, for example `#ff0000` for red.
+> Replace `#customColor` with the color you want to use, for example `#ff0000` for red.
 
 ```json
 "editor.tokenColorCustomizations": {
   "textMateRules": [
     {
-        "name": "tags html",
-        "scope": "entity.name.tag.rsx",
-        "settings": {
-            "foreground": "#customColor"
-
-        }
+      "name": "tags html",
+      "scope": "keyword.other.rust.rsx",
+      "settings": {
+        "foreground": "#customColor"
+      }
     },
     {
-        "name": "attributes html",
-        "scope": "entity.other.attribute-name.rsx",
-        "settings": {
+      "name": "attributes html",
+      "scope": "entity.name.function.rsx",
+      "settings": {
         "foreground": "#customColor"
-        }
+      }
     }
   ]
+}
+```
+## If your theme is `One Dark`
+
+```json
+"editor.tokenColorCustomizations": {
+  "[One Dark *]": {textMateRules here}
+}
+```
+## SemanticHighlighting
+ 
+For the theme to correctly highlight the syntax, the default extension disables `editor.semanticHighlighting.enabled`, if you want to activate it put the following in your `settings.json`
+
+>`Warning`, this may cause highlighting to not work correctly
+
+```json
+"[rust]": {
+  "editor.semanticHighlighting.enabled": true,
 }
 ```
 
 ## Extras
 
-if you want to collaborate or you find a bug, don't hesitate to let me know [Contact Me/Jhon AF](https://github.com/nander1117/Dioxus-RSX)
+If you want to collaborate or you find a bug, don't hesitate to let me know [Contact Me/Jhon AF](https://github.com/nander1117/Dioxus-RSX)
 
 ---
 
